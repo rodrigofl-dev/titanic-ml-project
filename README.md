@@ -81,13 +81,13 @@ Key insights discovered during analysis:
 - Passengers traveling in small families had better survival rates.
 - Passengers embarking at Cherbourg showed higher survival rates, likely due to a higher proportion of first-class passengers.
 
-Examples of visualizations include:
+Visualizations:
 
-- Age distribution
-- Survival by gender
-- Survival by passenger class
-- Survival by family size
-- Correlation heatmaps
+![Survival by Sex](reports/figures/survival_by_sex.png)
+![Survival by Class](reports/figures/survival_by_class.png)
+![Age distribution](reports/figures/age_distribution.png)
+![Fare distribution](reports/figures/fare_distribution.png)
+![Correlation heatmap](reports/figures/correlation_heatmap.png)
 
 ---
 
