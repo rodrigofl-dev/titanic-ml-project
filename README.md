@@ -97,21 +97,55 @@ Several new features were created to improve model performance:
 
 ### Family size
 
+```python
 FamilySize = SibSp + Parch + 1
+```
 
 Passengers traveling in small families showed higher survival rates.
 
+### Has cabin
+
+```python
+train["HasCabin"] = train["Cabin"].notna().astype(int)
+```
+
+Passengers with recorded cabin information had a higher chance of survival.
+
 ### Deck extraction
+
+```python
+train['Deck'] = train['Cabin'].apply(lambda x: x[0] if pd.notnull(x) else 'U')
+```
 
 Deck information was extracted from the Cabin column.
 
 ### Categorical encoding
 
+```python
+train = pd.get_dummies(train, columns=["Embarked"], drop_first=True)
+```
+
 Categorical variables were transformed using one-hot encoding.
+
+### Fare per person
+
+```python
+train['Fare_Per_Person']=train['Fare']/train['FamilySize']
+```
+
+This feature provides a more accurate representation of individual socioeconomic standing by normalizing costs across family units.
+
+### Is alone
+
+```python
+train['IsAlone'] = (train['FamilySize'] == 1).astype(int)
+```
+
+While `FamilySize` provides granular data, this feature simplifies the feature space, allowing the model to focus on the significant survival gap between these two primary categories without the noise of specific family counts.
 
 ---
 
-# Models Tested
+# WIP - Models Tested
 
 The following models were evaluated:
 
@@ -123,7 +157,7 @@ Model performance was evaluated using accuracy on validation data.
 
 ---
 
-# Results
+# WIP - Results
 
 Best performing model:
 
@@ -176,6 +210,7 @@ Predictions will be saved in:
 
 - Python
 - pandas
+- numpy
 - scikit-learn
 - seaborn
 - matplotlib
