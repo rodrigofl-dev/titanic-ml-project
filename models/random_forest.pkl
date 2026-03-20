@@ -1,1 +1,0 @@
-Mostra que você sabe serializar modelos.
