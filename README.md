@@ -47,12 +47,9 @@ Target variable:
 # Project Structure
 
 ```
-titanic-survival-prediction/
+titanic-ml-project/
 
 data/
-    processed/
-    raw/
-    submissions/
 
 notebooks/
     01_eda.ipynb
@@ -65,7 +62,6 @@ src/
     model.py
     train.py
 
-models/
 reports/
 ```
 
@@ -81,6 +77,7 @@ Key insights discovered during analysis:
 - Passengers traveling in small families had better survival rates.
 - Passengers embarking at Cherbourg showed higher survival rates, likely due to a higher proportion of first-class passengers.
 
+\
 Visualizations:
 
 ![Survival by Sex](reports/figures/survival_by_sex.png)
@@ -145,25 +142,28 @@ While `FamilySize` provides granular data, this feature simplifies the feature s
 
 ---
 
-# WIP - Models Tested
+# Models Tested
 
 The following models were evaluated:
 
-- Logistic Regression
 - Random Forest
 - Gradient Boosting
+- AdaBoost
+- XGBoost
+- Voting Classifier
 
 Model performance was evaluated using accuracy on validation data.
 
 ---
 
-# WIP - Results
+# Results
 
 Best performing model:
 
-Random Forest Classifier
+Voting Classifier with AdaBoost and XGBoost
 
-Accuracy: ~0.80
+Cross-validation accuracy: 82% - 84% \
+Kaggle Leaderboard: 78%
 
 Most important features:
 
@@ -172,7 +172,7 @@ Most important features:
 - Fare
 - Age
 - FamilySize
-- Title
+- HasCabin
 
 ---
 
@@ -220,4 +220,4 @@ Predictions will be saved in:
 
 # Author
 
-Data Science project developed as part of a machine learning portfolio.
+Rodrigo Lopes - Data Science project developed as part of a machine learning portfolio.
